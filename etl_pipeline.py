@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import requests
 import json
-
+import pandas as pd
 default_args = {
     'owner': 'airflow',
     'start_date': datetime(2024, 4, 1),
