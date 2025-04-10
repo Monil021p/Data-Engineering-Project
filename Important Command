@@ -1,4 +1,17 @@
 Important Commands:
------------------------------------------
-airflow webserver -p 8081 &
-airflow scheduler &
+-----------------------------------------------
+#To Start Server & Scheduler:
+--->airflow webserver -p 8081 &
+--->airflow scheduler &
+#To Stop:
+--->pkill -f "airflow webserver"
+--->pkill -f "airflow scheduler"
+-----------------------------------------------
+#TO Enter PostgreSQL Database:
+--->sudo -u postgres psql
+#To exit postgreSQL:
+--->\q
+#To Connect With PostgreSQL Database:
+--->psql -h localhost -U postgres -d airflow_data
+#To Change PostgreSQL User's Password:
+--->ALTER USER postgres WITH PASSWORD 'password';
