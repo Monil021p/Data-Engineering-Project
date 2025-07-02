@@ -1,11 +1,11 @@
 Important Commands:
 -----------------------------------------------
 #To Start Server & Scheduler:
---->airflow webserver -p 8081 &
+--->airflow api-server -p 8081 &
     airflow scheduler &
 #To Stop:
---->pkill -f "airflow webserver"
-    pkill -f "airflow scheduler"
+--->pkill -f "airflow api-server"
+    pkill -f "airflow api-server"
 -----------------------------------------------
 #TO Enter PostgreSQL Database:
 --->sudo -u postgres psql
