@@ -42,9 +42,9 @@ def extract_data():
         with open('/tmp/raw_data.json', 'w') as f:
             json.dump(records, f)
 
-        print("✅ Data for multiple cryptocurrencies extracted successfully.")
+        print("Data for multiple cryptocurrencies extracted successfully.")
     else:
-        raise Exception(f"❌ Failed to fetch data: {response.status_code}")
+        raise Exception(f"Failed to fetch data: {response.status_code}")
 
 def transform_data():
     with open('/tmp/raw_data.json', 'r') as f:
@@ -63,7 +63,7 @@ def transform_data():
     with open('/tmp/transformed_data.json', 'w') as f:
         json.dump(transformed_data, f)
 
-    print("🔁 Transformed data saved.")
+    print("Transformed data saved.")
 
 def load_data():
     with open('/tmp/transformed_data.json', 'r') as f:
@@ -96,7 +96,7 @@ def load_data():
     conn.commit()
     cursor.close()
     conn.close()
-    print("📥 All records inserted into PostgreSQL.")
+    print("All records inserted into PostgreSQL.")
 
 extract_task = PythonOperator(task_id='extract_data', python_callable=extract_data, dag=dag)
 transform_task = PythonOperator(task_id='transform_data', python_callable=transform_data, dag=dag)
